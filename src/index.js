@@ -9,10 +9,12 @@ import { HashRouter } from "react-router-dom";
 import "./base/styles/main.scss";
 const store = createStore(reducer, applyMiddleware(thunk));
 ReactDOM.render(
-  <HashRouter>
+  <>
     <Provider store={store}>
-      <App />
+      <HashRouter>
+        <App />
+      </HashRouter>
     </Provider>
-  </HashRouter>,
+  </>,
   document.getElementById("app")
 );

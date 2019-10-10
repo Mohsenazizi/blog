@@ -39,6 +39,7 @@ const reducer = (state = initialState, action) => {
 
     case actionTypes.DELETEFALSE:
       newState.loaded = false;
+      newState.savedPostStatus = false;
       return {
         ...newState
       };
