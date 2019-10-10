@@ -1,0 +1,90 @@
+.postsContainer {
+  width: 80%;
+  margin-left: 10%;
+  display: flex;
+  flex-direction: column;
+  .buttonContainer {
+    width: 100%;
+    padding: 30px 0;
+    display: flex;
+    justify-content: flex-end;
+    .btn {
+      padding: 8px 30px;
+      color: white;
+      font-size: 1.4rem;
+      background-color: orange;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  }
+  .postContainer {
+    width: 100%;
+    padding: 30px;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302),
+      0 1px 3px 1px rgba(60, 64, 67, 0.149);
+    margin-bottom: 30px;
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    .moreContainer {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: rgba(51, 51, 51, 0.5);
+      transition: 500ms;
+      opacity: 0;
+      .moreDetail {
+        width: 40px;
+        padding-top: 40px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(270deg);
+        // opacity: 0;
+        background-color: orange;
+        border-radius: 50%;
+        transition: 500ms;
+        &::before,
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: #fff;
+        }
+        &:before {
+          width: 2px;
+          height: 50%;
+        }
+        &:after {
+          height: 2px;
+          width: 50%;
+        }
+        a {
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+    &:hover {
+      .moreContainer {
+        opacity: 1;
+        .moreDetail {
+          opacity: 1;
+          transition: translate(-50%, -50%) rotate(0);
+          transition: 500ms 200ms;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
